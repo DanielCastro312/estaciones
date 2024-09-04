@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Estaciones</title>
+    <link rel="stylesheet" href="{% static 'css/verEstaciones.css' %}">
+    <!-- Importo iconos y fuentes como en el ejemplo -->
+</head>
+<body>
+    <header class="navbar">
+        <a href="#" class="logo">Estaciones Danis</a>
+        <div class="nav-items">
+            <img src="{% static 'img/peru.jpg' %}" alt="Goku" class="goku-image">
+         
+        </div>
+    </header>
+
+<div id="buscador">
+    <input type="text" id="campoBusqueda" placeholder="Buscar estación">
+</div>
+
+<h1>Todas las Estaciones</h1>
+<div id="listaEstaciones">
+    {% for estacion in estaciones %}
+        <div class="estacion">
+            <div class="estacion-info">
+                <h3>{{ estacion.razon_social }}</h3>
+                <p>URL: {{ estacion.url }}</p>
+                <p>Dirección: {{ estacion.direccion }}</p>
+                <p>Puerto: {{ estacion.puerto }}</p>
+                <p>Usuario: {{ estacion.usuario }}</p>
+                <p>Clave: {{ estacion.clave }}</p>
+            </div>
+            <div class="estacion-observacion">
+                {{ estacion.observacion }}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<script src="{% static 'js/estaciones.js' %}"></script>
+</body>
+</html>

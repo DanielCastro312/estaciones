@@ -1,0 +1,158 @@
+:root {
+    --primary-color: #d9534f;
+    --text-color: #333;
+    --bg-color: #fff;
+    --border-color: #ddd;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --hover-color: #b33b32;
+    --border-radius: 5px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f7f7;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin: 1rem 0;
+}
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+}
+
+.nav-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-lista li {
+    margin-left: 20px;
+}
+
+.nav-lista li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.goku-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+#buscador {
+    background-color: var(--bg-color);
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#buscador input[type="text"] {
+    padding: 0.625rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    flex: 1;
+    min-width: 240px;
+}
+
+#listaEstaciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1rem;
+    margin: 1rem auto;
+    padding: 1rem;
+    max-width: 1000px;
+}
+
+.estacion {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.estacion:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.estacion-info {
+    margin-bottom: 15px;
+}
+
+.estacion-info h3 {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.estacion-info p {
+    font-size: 1rem;
+    margin: 0.25rem 0;
+    color: var(--text-color);
+}
+
+.estacion-observacion {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    font-style: italic;
+    text-align: right;
+}
+#filtro-botones {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.filtro-boton {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: var(--box-shadow);
+    transition: background-color 0.3s;
+}
+
+.filtro-boton:hover {
+    background-color: var(--hover-color);
+}
+/* Ajustes responsivos para el grid */
+@media (max-width: 768px) {
+    #listaEstaciones {
+        grid-template-columns: 1fr;
+    }
+}
